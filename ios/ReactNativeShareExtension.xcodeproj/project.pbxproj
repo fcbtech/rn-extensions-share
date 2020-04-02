@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E908633243572E7005708C0 /* ContactsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E908632243572E7005708C0 /* ContactsHelper.m */; };
 		41B5DE3E1D0B50D300949BD5 /* ReactNativeShareExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B5DE3D1D0B50D300949BD5 /* ReactNativeShareExtension.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E908631243572D9005708C0 /* ContactsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsHelper.h; sourceTree = "<group>"; };
+		1E908632243572E7005708C0 /* ContactsHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsHelper.m; sourceTree = "<group>"; };
 		41B5DE301D0B505800949BD5 /* libReactNativeShareExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeShareExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B5DE3D1D0B50D300949BD5 /* ReactNativeShareExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeShareExtension.m; sourceTree = "<group>"; };
 		41B5DE3F1D0B50FA00949BD5 /* ReactNativeShareExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeShareExtension.h; sourceTree = "<group>"; };
@@ -39,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E908630243572CC005708C0 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1E908631243572D9005708C0 /* ContactsHelper.h */,
+				1E908632243572E7005708C0 /* ContactsHelper.m */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		41B5DE271D0B505800949BD5 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +70,7 @@
 		41B5DE3C1D0B506B00949BD5 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				1E908630243572CC005708C0 /* helpers */,
 				41B5DE3F1D0B50FA00949BD5 /* ReactNativeShareExtension.h */,
 				41B5DE3D1D0B50D300949BD5 /* ReactNativeShareExtension.m */,
 			);
@@ -103,6 +116,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 41B5DE271D0B505800949BD5;
@@ -120,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E908633243572E7005708C0 /* ContactsHelper.m in Sources */,
 				41B5DE3E1D0B50D300949BD5 /* ReactNativeShareExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +277,7 @@
 				41B5DE3B1D0B505800949BD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

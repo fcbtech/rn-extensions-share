@@ -1,3 +1,5 @@
+#import <objc/runtime.h>
+
 #import <React/RCTRootView.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
@@ -6,6 +8,7 @@
 #endif
 
 #import "ReactNativeShareExtension.h"
+#import "ContactsHelper.h"
 
 NSExtensionContext* extensionContext;
 
@@ -80,12 +83,22 @@ RCT_REMAP_METHOD(data, resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPro
 
                 // is an URL - Can be a path or Web URL
                 if ([(NSObject *)item isKindOfClass:[NSURL class]]) {
-                    NSURL *url = (NSURL *) item;
+                    NSURL *url = (NSURL *)item;
                     string = [url absoluteString];
                     type = ([[string pathExtension] isEqualToString:@""]) || [url.scheme containsString:@"http"] ? @"text" : @"media";
 
                     [data addObject:@{ @"value": string, @"type": type }];
-                
+
+                // is a Dictionary
+                } else if ([(NSObject *)item isKindOfClass:[NSData class]]) {
+                    if (@available(iOS 9.0, *)) {
+                        NSArray *contacts = [CNContactVCardSerialization contactsWithData:(NSData *)item error:nil];
+                        for (CNContact *contact in contacts) {
+                            type = @"contact";
+                            [data addObject:@{ @"value": [[ContactsHelper new] contactToDictionary:contact withThumbnails:true], @"type": type }];
+                        }
+                    }
+
                 // is a String
                 } else if ([(NSObject *)item isKindOfClass:[NSString class]]) {
                     string = (NSString *)item;
