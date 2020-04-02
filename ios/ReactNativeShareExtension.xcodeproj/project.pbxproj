@@ -42,15 +42,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E908630243572CC005708C0 /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-				1E908631243572D9005708C0 /* ContactsHelper.h */,
-				1E908632243572E7005708C0 /* ContactsHelper.m */,
-			);
-			path = helpers;
-			sourceTree = "<group>";
-		};
 		41B5DE271D0B505800949BD5 = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +61,8 @@
 		41B5DE3C1D0B506B00949BD5 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				1E908630243572CC005708C0 /* helpers */,
+				1E908632243572E7005708C0 /* ContactsHelper.m */,
+				1E908631243572D9005708C0 /* ContactsHelper.h */,
 				41B5DE3F1D0B50FA00949BD5 /* ReactNativeShareExtension.h */,
 				41B5DE3D1D0B50D300949BD5 /* ReactNativeShareExtension.m */,
 			);
