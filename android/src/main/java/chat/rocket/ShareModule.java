@@ -33,9 +33,10 @@ import java.util.Map;
 public class ShareModule extends ReactContextBaseJavaModule {
 
   private File tempFolder;
-
+  ReactApplicationContext context;
   public ShareModule(ReactApplicationContext reactContext) {
       super(reactContext);
+      context=reactContext;
   }
 
   @Override
@@ -81,7 +82,9 @@ public class ShareModule extends ReactContextBaseJavaModule {
             } else if (Intent.ACTION_SEND.equals(action)) {
                 Uri uri = (Uri) intent.getParcelableExtra(Intent.EXTRA_STREAM);
                 if (uri != null) {
+                    map.putString("filepath", RealPathUtil.getRealPathFromURI(context,uri));
                     map.putString("value", uri.toString());
+                    // Log.d("File Name ", RealPathUtil.getRealPathFromURI(context,uri));
                 }
             }
         }
