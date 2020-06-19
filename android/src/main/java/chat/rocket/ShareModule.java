@@ -12,10 +12,6 @@ import com.facebook.react.bridge.Arguments;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.database.Cursor;
-import android.content.CursorLoader;
-import android.provider.MediaStore;
-import android.util.Log;
 
 import android.graphics.Bitmap;
 import java.io.InputStream;
